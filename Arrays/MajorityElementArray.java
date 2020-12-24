@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+// Time Complexity : O(log(n))
+
 public class MajorityElementArray {
     public static void findMajorityElement(int[] arr) {
         HashMap<Integer, Integer> countMap = new HashMap<Integer, Integer>();
