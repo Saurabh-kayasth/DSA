@@ -67,6 +67,19 @@ class LinkedList{
         }
     }
 
+    public void searchValue(int value){
+        Node n = head;
+        int counter = 0;
+        while(n.next != null){
+            if(n.data == value){
+                break;
+            }
+            n = n.next;
+            counter++;
+        }
+        System.out.println("Element found at index "+counter);
+    }
+
     public void show(){
         Node node = head;
         while(node.next != null){
@@ -90,5 +103,6 @@ public class LinkedListRunner {
         ll.insertAtIndex(0,400);
         ll.deleteAtIndex(2);
         ll.show();
+        ll.searchValue(54);
     }
 }

@@ -1,10 +1,7 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.*;
  
 class EvenProductSubArray {
- 
- 
+
     public static void findEvenSubArray(int[] arr){
         int counter = 0;
         for(int i = 0;i<arr.length;i++){
@@ -14,7 +11,6 @@ class EvenProductSubArray {
                     counter++;
                     product = product*arr[j];
                 }
- 
             }
         }
         System.out.println(counter);
@@ -31,7 +27,5 @@ class EvenProductSubArray {
             }
             findEvenSubArray(arr);
         }
-        
- 
     }
 }
