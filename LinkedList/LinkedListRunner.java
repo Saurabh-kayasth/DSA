@@ -80,6 +80,16 @@ class LinkedList{
         System.out.println("Element found at index "+counter);
     }
 
+    public void updateValue(int index,int value){
+        Node n = head;
+        int counter = 0;
+        while(counter < index){
+            n = n.next;
+            counter++;
+        }
+        n.data = value;
+    }
+
     public void show(){
         Node node = head;
         while(node.next != null){
@@ -103,6 +113,8 @@ public class LinkedListRunner {
         ll.insertAtIndex(0,400);
         ll.deleteAtIndex(2);
         ll.show();
-        ll.searchValue(54);
+        ll.searchValue(400);
+        ll.updateValue(1, 4000);
+        ll.show();
     }
 }
