@@ -1,6 +1,6 @@
 class Node {
     int data;
-    Node next;
+    Node next;  // stores data and next node of the current node
 }
 
 class LinkedList{
@@ -90,6 +90,15 @@ class LinkedList{
         n.data = value;
     }
 
+    public void mergeLinkedLists(Node ll2){
+        Node n = head;
+        Node node = head;
+        while(n.next != null){
+            n = n.next;
+        }
+        n.next = ll2;
+    }
+
     public void show(){
         Node node = head;
         if(node != null){
@@ -111,15 +120,21 @@ public class LinkedListRunner {
         ll.insertAtEnd(53);
         ll.insertAtEnd(54);
         ll.insertAtEnd(1000);
-        ll.insertAtStart(100);
-        ll.insertAtIndex(2,200);
-        ll.insertAtIndex(0,400);
-        ll.deleteAtIndex(2);
+        // ll.insertAtStart(100);
+        // ll.insertAtIndex(2,200);
+        // ll.insertAtIndex(0,400);
+        // ll.deleteAtIndex(2);
+        // ll.searchValue(400);
+        // ll.updateValue(1, 4000);
         ll.show();
-        ll.searchValue(400);
-        ll.updateValue(1, 4000);
-        ll.show();
+        System.out.println("=====================");
         LinkedList ll2 = new LinkedList();
+        ll2.insertAtEnd(5);
+        ll2.insertAtEnd(1);
+        ll2.insertAtEnd(53);
         ll2.show();
+        System.out.println("=====================");
+        ll.mergeLinkedLists(ll2.head);
+        ll.show();
     }
 }
