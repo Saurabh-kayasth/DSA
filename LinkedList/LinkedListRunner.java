@@ -92,11 +92,14 @@ class LinkedList{
 
     public void show(){
         Node node = head;
-        while(node.next != null){
+        if(node != null){
+            while(node.next != null){
+                System.out.println(node.data);
+                node = node.next;
+            }
             System.out.println(node.data);
-            node = node.next;
         }
-        System.out.println(node.data);
+        
     }
 }
 
@@ -116,5 +119,7 @@ public class LinkedListRunner {
         ll.searchValue(400);
         ll.updateValue(1, 4000);
         ll.show();
+        LinkedList ll2 = new LinkedList();
+        ll2.show();
     }
 }
