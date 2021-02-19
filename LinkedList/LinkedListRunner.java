@@ -92,7 +92,6 @@ class LinkedList{
 
     public void mergeLinkedLists(Node ll2){
         Node n = head;
-        Node node = head;
         while(n.next != null){
             n = n.next;
         }
@@ -120,12 +119,12 @@ public class LinkedListRunner {
         ll.insertAtEnd(53);
         ll.insertAtEnd(54);
         ll.insertAtEnd(1000);
-        // ll.insertAtStart(100);
-        // ll.insertAtIndex(2,200);
-        // ll.insertAtIndex(0,400);
-        // ll.deleteAtIndex(2);
-        // ll.searchValue(400);
-        // ll.updateValue(1, 4000);
+        ll.insertAtStart(100);
+        ll.insertAtIndex(2,200);
+        ll.insertAtIndex(0,400);
+        ll.deleteAtIndex(2);
+        ll.searchValue(400);
+        ll.updateValue(1, 4000);
         ll.show();
         System.out.println("=====================");
         LinkedList ll2 = new LinkedList();
