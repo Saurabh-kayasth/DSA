@@ -18,7 +18,7 @@ class LinkedList{
             while(n.next != null){
                 n = n.next;
             }
-            n.next = node;
+            n.next = node;  //dealing with physical memory address
         }
     }
 
