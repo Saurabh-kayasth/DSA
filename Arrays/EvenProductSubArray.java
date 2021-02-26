@@ -27,5 +27,6 @@ class EvenProductSubArray {
             }
             findEvenSubArray(arr);
         }
+        s.close();
     }
 }

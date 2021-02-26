@@ -11,6 +11,7 @@ public class PascalRunner {
             }
             System.out.println("");
         }
+        sc.close();
     }
 
     public static int fact(int n){

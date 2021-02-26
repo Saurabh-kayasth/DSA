@@ -1,5 +1,5 @@
-import java.io.*;
-import java.util.*;
+// import java.io.*;
+// import java.util.*;
 
 public class ReverseArray {
 
@@ -15,9 +15,9 @@ public class ReverseArray {
         return a;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    // private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         int[] arr = {2,3,4,1};
 
         int[] res = reverseArray(arr);
