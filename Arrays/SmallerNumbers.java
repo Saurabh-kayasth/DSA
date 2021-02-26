@@ -6,7 +6,11 @@
 public class SmallerNumbers {
     public static void main(String[] args){
         int[] nums = {1,4,5,6,2};
+        nums = smallerNumbersThanCurrent(nums);
 
+        for(int i=0;i<nums.length;i++){
+            System.out.print(nums[i]+" ");
+        }
     }
 
     public static int[] smallerNumbersThanCurrent(int[] nums) {
