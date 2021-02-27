@@ -24,6 +24,7 @@ public class SingleNumber {
     public static void main(String[] args) {
         int[] nums = {4,1,2,1,2};
         System.out.println(singleNumber(nums));
+        System.out.println(singleNumberXor(nums));
 
     }
 
@@ -48,10 +49,13 @@ public class SingleNumber {
         } 
         return ans;
     }
+
+    public static int singleNumberXor(int[] nums){
+        int singleNum = 0;
+        for(int num : nums){
+            singleNum = singleNum ^ num;
+        }
+        return singleNum;
+    }
 }
 
-// int result = 0;
-        // for(int num : nums){
-        //     result = result ^ num;
-        //     System.out.println(result);
-        // }
