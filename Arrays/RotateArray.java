@@ -11,8 +11,8 @@ public class RotateArray {
 
     public static void main(String[] args) {
         RotateArray arrayObj = new RotateArray();
-        int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
-        int d = 2;
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int d = 4;
         for (int i = 0; i < d; i++) {
             arrayObj.rotateArray(arr, arr.length);
         }

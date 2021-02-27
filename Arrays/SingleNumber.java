@@ -53,6 +53,10 @@ public class SingleNumber {
     public static int singleNumberXor(int[] nums){
         int singleNum = 0;
         for(int num : nums){
+            // num ^ num = 0
+            // 0 ^ num = num
+            // num1 ^ num2  = sum
+            // sum ^ num1 = num2 = sum - num1
             singleNum = singleNum ^ num;
         }
         return singleNum;

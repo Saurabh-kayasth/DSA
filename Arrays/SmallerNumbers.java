@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 // Problem : leetcode
 // Given the array nums, for each nums[i] find out how many numbers in the array 
 // are smaller than it. That is, for each nums[i] you have to 
@@ -5,11 +7,12 @@
 
 public class SmallerNumbers {
     public static void main(String[] args){
-        int[] nums = {1,4,5,6,2};
-        nums = smallerNumbersThanCurrent(nums);
+        int[] nums = {1,2,2,3,4,1};
+        // nums = smallerNumbersThanCurrent(nums);
+        int[] nums2 = smallerNumbersThanCurrentNumber(nums);
 
-        for(int i=0;i<nums.length;i++){
-            System.out.print(nums[i]+" ");
+        for(int i=0;i<nums2.length;i++){
+            System.out.print(nums2[i]+" ");
         }
     }
 
@@ -27,4 +30,30 @@ public class SmallerNumbers {
         }
         return ans;
     }
+
+    // Works with positive numbers only
+    public static int[] smallerNumbersThanCurrentNumber(int[] nums) {
+        int[] temp = new int[101];
+        for(int num:nums){
+            temp[num]++;
+        }
+
+        int sum= 0;
+        int[] result = new int[nums.length];
+
+        // cumulative sum
+        int[] cumSum = new int[101];
+        for(int i = 0;i<temp.length;i++){
+            sum += temp[i];
+            cumSum[i] = sum; 
+        }
+        System.out.println("");
+
+        for(int i = 0;i<nums.length;i++){
+            result[i] = cumSum[nums[i]-1];
+        }
+
+        return result;
+    }
+
 }
