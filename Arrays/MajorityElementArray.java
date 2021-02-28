@@ -3,25 +3,27 @@ import java.util.HashMap;
 // Time Complexity : O(log(n))
 
 public class MajorityElementArray {
-    public static void findMajorityElement(int[] arr) {
+    public static int findMajorityElement(int[] nums) {
         HashMap<Integer, Integer> countMap = new HashMap<Integer, Integer>();
-        for (int i = 0; i < arr.length; i++) {
-            if (countMap.containsKey(arr[i])) {
-                int count = countMap.get(arr[i]) + 1;
-                if (count > arr.length / 2) {
-                    System.out.println(arr[i]);
-                    return;
+        int ans = nums[0];
+        for (int i = 0; i < nums.length; i++) {
+            if (countMap.containsKey(nums[i])) {
+                int count = countMap.get(nums[i]) + 1;
+                if (count > nums.length / 2) {
+                    ans = nums[i];
+                    break;
                 }
-                countMap.put(arr[i], count);
+                countMap.put(nums[i], count);
             } else {
-                countMap.put(arr[i], 1);
+                countMap.put(nums[i], 1);
             }
         }
-        System.out.println("Majority element does not exist");
+        return ans;
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[] { 2, 2, 2, 2, 3, 3, 3, 3, 3 };
-        findMajorityElement(arr);
+        // int arr[] = new int[] { 2, 2, 2, 2, 3, 3, 3, 3, 3 };
+        int arr[] = new int[]{3,2,3};
+        System.out.println(findMajorityElement(arr));
     }
 }

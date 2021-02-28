@@ -48,9 +48,7 @@ public class ArrayManipulation {
                 }
                 start++;
             }
-
         }
-
         return max;
     }
 }
