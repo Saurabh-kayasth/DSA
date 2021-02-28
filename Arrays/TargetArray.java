@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 // Given two arrays of integers nums and index. 
 // Your task is to create target array under the following rules:
 
@@ -36,12 +38,27 @@
 // Input: nums = [1], index = [0]
 // Output: [1]
 
-public class TargetArray {
+class TargetArray {
     public static void main(String[] args) {
-        
+        int[] nums = {0,1,2,3,4};
+        int[] index = {0,1,2,2,1};
+        int ans[] = createTargetArray(nums, index);
+        for(int i =0;i<ans.length;i++){
+            System.out.print(ans[i]+" ");
+        }
     }
 
-    public static int[] createTargetArray(int[] nums, int[] index) {
-        return nums;
+    static int[] createTargetArray(int[] nums, int[] index) {
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for(int i =0;i<nums.length;i++){
+            arr.add(index[i], nums[i]);
+        }
+
+        int ans[] =  new int[nums.length];
+        for(int i =0;i<nums.length;i++){
+            ans[i] = arr.get(i);
+        }
+
+        return ans;
     }
 }
