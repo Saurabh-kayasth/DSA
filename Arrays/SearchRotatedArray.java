@@ -32,9 +32,6 @@ public class SearchRotatedArray {
             right = start;
         }
 
-        System.out.println(left);
-        System.out.println(right);
-
         while(left <= right){
             int midPoint = left + (right - left)/2;
 
