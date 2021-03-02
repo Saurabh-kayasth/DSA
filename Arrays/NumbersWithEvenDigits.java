@@ -11,7 +11,7 @@ public class NumbersWithEvenDigits {
         for(int i=0;i<=nums.length-1;i++){
             // int d = 0;
             int n = nums[i];
-            int countDigits = 00;
+            int countDigits = 0;
             while(n != 0 ){
                 n = n / 10;
                 countDigits++;
