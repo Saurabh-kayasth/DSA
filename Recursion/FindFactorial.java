@@ -4,12 +4,11 @@ public class FindFactorial {
         System.out.println(fact(n));
     }
 
-    static int fact(int n){
-        if(n==0){
+    static int fact(int n) {
+        if (n == 0) {
             return 1;
-        }
-        else {
-            return fact(n-1)*n;
+        } else {
+            return fact(n - 1) * n;
         }
     }
 }

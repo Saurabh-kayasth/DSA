@@ -21,10 +21,9 @@
 // Input: nums = [1]
 // Output: 0
 
-
 class UnsortedSubarray {
     public static void main(String[] args) {
-        int[] nums = {2,6,4,8,10,9,15};
+        int[] nums = { 2, 6, 4, 8, 10, 9, 15 };
         // int ans = findUnsortedSubarray(nums);
         int ans = findUnsortedSubarrayOpt(nums);
         System.out.println(ans);
@@ -32,35 +31,35 @@ class UnsortedSubarray {
 
     static int findUnsortedSubarray(int[] nums) {
         int[] tempArr = nums.clone();
-        for(int i =0;i<nums.length-1;i++){
-            for(int j=0;j<nums.length-1;j++){
-                if(nums[j]>nums[j+1]){
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = 0; j < nums.length - 1; j++) {
+                if (nums[j] > nums[j + 1]) {
                     int temp = nums[j];
-                    nums[j] = nums[j+1];
-                    nums[j+1]= temp;
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
                 }
             }
         }
 
-        int i,j;
-        for(i =0;i<nums.length;i++){
-            
-            if(tempArr[i] != nums[i]){
-                break;
-            }
-        }
-        
-        for(j = nums.length-1;j>=0;j--){
-            if(tempArr[j] != nums[j]){
+        int i, j;
+        for (i = 0; i < nums.length; i++) {
+
+            if (tempArr[i] != nums[i]) {
                 break;
             }
         }
 
-        return j-i > 0 ? j-i+1:0;
+        for (j = nums.length - 1; j >= 0; j--) {
+            if (tempArr[j] != nums[j]) {
+                break;
+            }
+        }
+
+        return j - i > 0 ? j - i + 1 : 0;
     }
 
     static int findUnsortedSubarrayOpt(int[] nums) {
-        
+
         return 0;
     }
 }

@@ -1,64 +1,62 @@
 class Node {
     int data;
-    Node next;  // stores data and next node of the current node
+    Node next; // stores data and next node of the current node
 }
 
-class LinkedList{
+class LinkedList {
     Node head;
-    public void insertAtEnd(int data){
+
+    public void insertAtEnd(int data) {
         Node node = new Node();
         node.data = data;
         node.next = null;
-        
-        if(head == null){
+
+        if (head == null) {
             head = node;
-        }
-        else {
+        } else {
             Node n = head;
-            while(n.next != null){
+            while (n.next != null) {
                 n = n.next;
             }
-            n.next = node;  //dealing with physical memory address
+            n.next = node; // dealing with physical memory address
         }
     }
 
-    public void insertAtStart(int data){
+    public void insertAtStart(int data) {
         Node node = new Node();
         node.data = data;
         node.next = head;
         head = node;
     }
 
-    public void insertAtIndex(int index,int data){
-        
+    public void insertAtIndex(int index, int data) {
+
         Node node = new Node();
         node.data = data;
         node.next = null;
 
-        if(index == 0){
+        if (index == 0) {
             insertAtStart(data);
-        }
-        else {
+        } else {
             Node n = head;
             int counter = 0;
-            while(counter < index-1){
+            while (counter < index - 1) {
                 counter++;
                 n = n.next;
             }
             node.next = n.next;
             n.next = node;
-        }    
+        }
     }
 
-    public void deleteAtIndex(int index){
-        if(index == 0){
+    public void deleteAtIndex(int index) {
+        if (index == 0) {
             head = head.next;
-        }
-        else {
+        } else {
             Node n = head;
             int counter = 0;
             Node node = null;
-            while(counter < index-1){
+            while (counter < index - 1) {
                 counter++;
                 n = n.next;
             }
@@ -67,53 +65,53 @@ class LinkedList{
         }
     }
 
-    public void searchValue(int value){
+    public void searchValue(int value) {
         Node n = head;
         int counter = 0;
-        while(n.next != null){
-            if(n.data == value){
+        while (n.next != null) {
+            if (n.data == value) {
                 break;
             }
             n = n.next;
             counter++;
         }
-        System.out.println("Element found at index "+counter);
+        System.out.println("Element found at index " + counter);
     }
 
-    public void updateValue(int index,int value){
+    public void updateValue(int index, int value) {
         Node n = head;
         int counter = 0;
-        while(counter < index){
+        while (counter < index) {
             n = n.next;
             counter++;
         }
         n.data = value;
     }
 
-    public void mergeLinkedLists(Node ll2){
+    public void mergeLinkedLists(Node ll2) {
         Node n = head;
-        while(n.next != null){
+        while (n.next != null) {
             n = n.next;
         }
         n.next = ll2;
     }
 
-    public void reverseLinkedList(){
+    public void reverseLinkedList() {
 
     }
 
-    public void show(){
+    public void show() {
         Node node = head;
-        if(node != null){
-        System.out.format("%s%15s%35s","DATA","NEXT","CURRENT NODE ADDRESS\n");
-        System.out.println("-------------------------------------------------------------------");
-            while(node.next != null){
-                System.out.format("%d%20s%25s",node.data,node.next,node+"\n");
+        if (node != null) {
+            System.out.format("%s%15s%35s", "DATA", "NEXT", "CURRENT NODE ADDRESS\n");
+            System.out.println("-------------------------------------------------------------------");
+            while (node.next != null) {
+                System.out.format("%d%20s%25s", node.data, node.next, node + "\n");
                 node = node.next;
             }
-            System.out.format("%d%20s%25s",node.data,node.next,node+"\n");
+            System.out.format("%d%20s%25s", node.data, node.next, node + "\n");
         }
-        
+
     }
 }
 

@@ -22,28 +22,24 @@
 
 public class ArrayManipulation {
     public static void main(String[] args) {
-        int[][] queries = {
-            {1, 2, 100},
-            {2, 5, 100},
-            {3, 4, 100}
-        };
-        
+        int[][] queries = { { 1, 2, 100 }, { 2, 5, 100 }, { 3, 4, 100 } };
+
         int n = 5;
         int ans = arrayManipulation(n, queries);
         System.out.println(ans);
     }
 
-    static int arrayManipulation(int n,int[][] queries){
+    static int arrayManipulation(int n, int[][] queries) {
         int[] ans = new int[n];
         int max = Integer.MIN_VALUE;
 
-        for(int i = 0 ; i<queries.length;i++){
-            int start = queries[i][0]-1;
-            int end = queries[i][1]-1;
+        for (int i = 0; i < queries.length; i++) {
+            int start = queries[i][0] - 1;
+            int end = queries[i][1] - 1;
             int number = queries[i][2];
-            while(start <= end){
+            while (start <= end) {
                 ans[start] += number;
-                if(ans[start] > max){
+                if (ans[start] > max) {
                     max = ans[start];
                 }
                 start++;

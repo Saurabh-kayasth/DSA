@@ -18,41 +18,41 @@
 public class ReplaceElements {
     public static void main(String[] args) {
         // int[] arr = {17,18,5,4,6,1}; // {18,6,6,6,1,-1}
-        int[] arr = {400};
+        int[] arr = { 400 };
         // int[] ans = replaceElements(arr);
         int[] ans = replaceElementsOpt(arr);
-        for(int i=0;i<ans.length;i++){
+        for (int i = 0; i < ans.length; i++) {
             System.out.print(ans[i] + " ");
         }
     }
 
     static int[] replaceElements(int[] arr) {
-        for(int i= 0;i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
             int max = Integer.MIN_VALUE;
-            for(int j = i+1;j<arr.length;j++){
-                if(arr[j] > max){
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > max) {
                     max = arr[j];
                 }
             }
             arr[i] = max;
         }
-        arr[arr.length-1] = -1;
+        arr[arr.length - 1] = -1;
         return arr;
     }
 
-    static int[] replaceElementsOpt(int[] arr){
-        int maximumElement = arr[arr.length-1];
-        arr[arr.length-1] = -1;
+    static int[] replaceElementsOpt(int[] arr) {
+        int maximumElement = arr[arr.length - 1];
+        arr[arr.length - 1] = -1;
 
-        for(int i=arr.length-2;i>=0;i--){
+        for (int i = arr.length - 2; i >= 0; i--) {
             int temp = maximumElement;
-            if(arr[i] > maximumElement){
+            if (arr[i] > maximumElement) {
                 maximumElement = arr[i];
             }
             arr[i] = temp;
         }
 
-        arr[arr.length-1] = -1;
+        arr[arr.length - 1] = -1;
         return arr;
     }
 

@@ -4,12 +4,11 @@ public class SumOfNaturalNumbers {
         System.out.println(sum(n));
     }
 
-    static int sum(int n){
-        if(n == 1){
+    static int sum(int n) {
+        if (n == 1) {
             return 1;
-        }
-        else {
-            return sum(n-1)+n;
+        } else {
+            return sum(n - 1) + n;
         }
     }
 }
