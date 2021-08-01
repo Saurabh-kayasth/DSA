@@ -17,8 +17,8 @@
 
 public class ReplaceElements {
     public static void main(String[] args) {
-        // int[] arr = {17,18,5,4,6,1}; // {18,6,6,6,1,-1}
-        int[] arr = { 400 };
+        int[] arr = { 17, 18, 5, 4, 6, 1 }; // {18,6,6,6,1,-1}
+        // int[] arr = { 400 };
         // int[] ans = replaceElements(arr);
         int[] ans = replaceElementsOpt(arr);
         for (int i = 0; i < ans.length; i++) {
@@ -51,9 +51,6 @@ public class ReplaceElements {
             }
             arr[i] = temp;
         }
-
-        arr[arr.length - 1] = -1;
         return arr;
     }
-
 }
