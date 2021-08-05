@@ -1,4 +1,8 @@
 {
     "compile-hero.disable-compile-files-on-did-save-code": false,
-    "spring-boot.ls.checkJVM": false
+    "spring-boot.ls.checkJVM": false,
+    "java.project.sourcePaths": [
+        "Arrays",
+        "Sorting"
+    ]
 }
